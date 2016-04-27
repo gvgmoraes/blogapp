@@ -11,8 +11,12 @@ require './models'
 set :database, 'sqlite3:blogapp.sqlite3'
 # set :sessions, true 
 
-# get '/' do
-# 	@users = User.all
-# 	erb :home
-# 	#line that you can put so that it doesnt load layout
-# end
+get '/' do
+	@users = User.all
+	erb :home
+	#line that you can put so that it doesnt load layout
+end
+
+post '/posts/create' do
+	@post = Post.create(params[:post])
+end 
