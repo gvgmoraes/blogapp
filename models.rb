@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
 	has_many :posts
-	has_many :likes, through: :posts 
+	has_many :likes
 	has_many :follows, through: :users
 end 
 
 class Post < ActiveRecord::Base
 	belongs_to :user
-	has_many :likes, through: :users
+	has_many :likes
 end 
 
 class Like < ActiveRecord::Base

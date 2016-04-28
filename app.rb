@@ -22,7 +22,10 @@ get '/' do
 	#line that you can put so that it doesnt load layout
 end
 
-get '/user_id' do 
+
+get '/user_home' do
+	current_user
+	# how do we change this to make it automatize w the user_id NUM not string 
 	erb :userhome
 end 
 
@@ -36,7 +39,7 @@ post '/sign_in' do
 			session[:user_id] = @user.id
 			flash[:notice] = "You've been signed in successfully."
 			# redirect '/user_id'
-			redirect "/user_id"
+			redirect "/user_home"
 		else
 			flash[:alert] = "There was a problem signing you in."
 			# puts params.inspect
@@ -45,27 +48,26 @@ post '/sign_in' do
 end
 
 
-# post '/posts/create' do
-# 	post = Post.create(params[:post])
-# 	redirect "/posts/#{post.id}"
-# end 
+post '/post/create' do
+	post = Post.create(params[:post])
+	# redirect "/posts/#{post.id}"
+	redirect "/recent" 
+end 
 
+# if you want the last 10 posts then @posts = current_user.posts.last(10)
+ get '/recent' do 
+ 	@posts = current_user.posts
+	erb :new_post 
 
-get '/user_id/new_post' do 
-	erb :new_post
+end 
+
+get '/signout' do
+	session.clear
+	redirect "/"
 end 
 
 
-#  get '/posts/:id' do 
-# 	@post = Post.find(params[:id])
-# 	puts @post.user.user_name
-# 	erb :new_post
-
-# end 
 
 
 
-# post '/posts/create' do
-# 	@post = Post.create(params[:post])
-# end 
 

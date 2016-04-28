@@ -9,13 +9,22 @@
 </head>
 <body>
 
-<!-- 	<div id="logo_box"> -->
 		<div class="logo">
-		<a href="/"><img src="/img/logo.png"></a>
+		<!-- if session true: -->
+		<!-- <a href="/userhome"><img src="/img/logo.png"></a> -->
+		<!-- WE WANT THE USER HOME TO AUTOMATICALLY LOAD W APPROPRIATE CURRENT USER ID -->
+	<!-- 	else -->
+		<% if !current_user %>
+			<a href="/"><img src="/img/logo.png"></a>
+		<% else %>
+			<a href="/user_home"><img src="/img/logo.png"></a>
+		<% end %>
 		</div>
-<!-- 	</div> -->
+<br>
+<br>
+		<a href="/signout">SIGN OUT:</a>
 
-		<% if flash[:notice] %>
+	<% if flash[:notice] %>
 		<div class="flash notice">
 		<%=flash[:notice] %>
 		</div>
