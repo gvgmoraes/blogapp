@@ -25,6 +25,10 @@ end
 
 get '/user_home' do
 	current_user
+	@recentPosts = Post.last(50)
+
+	@follower = Follow.where(following_id: current_user.id)
+	@following = Follow.where(follower_id: current_user.id)
 	# how do we change this to make it automatize w the user_id NUM not string 
 	erb :userhome
 end 

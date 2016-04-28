@@ -1,7 +1,8 @@
 
 
 <h1>WELCOME:  <%= current_user.username %> </h1>
-<div id = "center">
+<br>
+<div class = "center">
 	<form method="POST" action="post/create">
 	<input type="textarea" name="[post]body" placeholder="Write your post here:"></input>
 	<input type = "hidden" value= "<%= current_user.id%>" name = "[post]user_id">
@@ -9,6 +10,13 @@
 	</form>
 </div>
 
+
+
+<h2>Check out the recent Posts:</h2>
+
+<% @recentPosts.each do |t| %>
+	<p><%= t.body %> <span class = "red"><%=t.likes.count%></span></p>
+<% end %> 
 
 
 

@@ -53,11 +53,18 @@ likes=Like.create([
 # 
 @allike=Like.all
 
-follows=Follow.create([
-	{user_id: @indiv.sample.id},
-	{user_id: @indiv.sample.id},
-	{user_id: @indiv.sample.id},
-	{user_id: @indiv.sample.id}
+# follows=Follow.create([
+# 	{following_id: @indiv.sample.id, follower_id: @indiv.sample.id},
+# 	{user_id: @indiv.sample.id},
+# 	{user_id: @indiv.sample.id},
+# 	{user_id: @indiv.sample.id}
+# ])
+
+follows = Follow.create([
+	{following_id: 46, follower_id: 50},{following_id: 47, follower_id: 50},{following_id: 48, follower_id: 50},
+	{following_id: 49, follower_id: 50},{following_id: 50, follower_id: 50},{following_id: 46, follower_id: 50}
+
 ])
+
 
 @allfol=Follow.all
