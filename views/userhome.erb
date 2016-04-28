@@ -1,11 +1,11 @@
  
 
 <h1>WELCOME: <!--  <%= current_user.id%> --> </h1>
-
-<form method="POST" action="/new_post">
-<input type="text" name="[post]body">
- <textarea type="text" placeholder="Write your post here:"></textarea>
-<!-- <input type = "hidden" value <%= current_user.id%> name = "[post]user_id"> -->
-<input type="submit">
-</form>
+<div id = "center">
+	<form method="POST" action="/new_post">
+	<input type="text" name="[post]body"<textarea type="text" placeholder="Write your post here:"></textarea>
+	<!-- <input type = "hidden" value <%= current_user.id%> name = "[post]user_id"> -->
+	<input type="submit">
+	</form>
+</div>
 

@@ -1,9 +1,47 @@
 
+.logo img {
+	width: 20%;
+	display: block;
+	margin: 0 auto;
+}
 
-#logo{
-	/*margin: 0 auto;*/
-	top: 15px;
-	margin-left: 200px; 
-	width: 50%;
+
+.center {
+	margin: 0 auto;
+}
+
+
+input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 
 }
+input[type=password] {
+    width: 20%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+	text-align: center;
+	display: inline-block;
+    width: 100px;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    color: red;
+}
+
+
+
