@@ -11,6 +11,7 @@
 User.delete_all 
 Post.delete_all
 Like.delete_all
+Follow.delete_all
 
 
 users =User.create([
