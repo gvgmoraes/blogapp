@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427204256) do
+ActiveRecord::Schema.define(version: 20160428133603) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
