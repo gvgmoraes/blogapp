@@ -45,22 +45,21 @@ post '/sign_in' do
 end
 
 
-post '/posts/create' do
-	post = Post.create(params[:post])
-	redirect "/posts/#{post.id}"
-end 
+# post '/posts/create' do
+# 	post = Post.create(params[:post])
+# 	redirect "/posts/#{post.id}"
+# end 
 
 
-get '/posts/new' do 
-	erb :new_post
-
-end 
+# get '/posts/new' do 
+# 	erb :new_post
+# end 
 
 
  get '/posts/:id' do 
 	@post = Post.find(params[:id])
 	puts @post.user.user_name
-	erb :show2
+	erb :new_post
 
 end 
 

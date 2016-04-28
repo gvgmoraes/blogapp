@@ -1,5 +1,6 @@
 .logo{
 	text-align: center;
-	position: fixed;
-	top: 5px;
+	top: 15px;
+	width: 50%;
+	margin-right: 25%;
 }

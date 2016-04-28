@@ -1,12 +1,23 @@
  
 
-<h1>WELCOME: </h1>
+<h1>WELCOME: <!--  <%= current_user.id%> --> </h1>
 
-<form method="POST" action="/posts/new">
-<label for="title">Post Title</label>
-<input type="text" name="[post]title">
-<label for="text">Post Text</label>
-<textarea name="[post]body"></textarea>
-<input type = "hidden" value <%= current_user.id%> name = "[post]user_id">
+<form method="POST" action="/new_post">
+<input type="text" name="[post]body">
+ <textarea type="text" placeholder="Write your post here:"></textarea>
+<!-- <input type = "hidden" value <%= current_user.id%> name = "[post]user_id"> -->
 <input type="submit">
 </form>
+
+<!--   <label for="firstname">Name</label>
+	  <input type="text" name="firstname"><br>
+	<!--   <label for="lastname">Last Name</label>
+	  <input type="text" name="lastname"><br> -->
+	<!--   <label for="email">E-mail</label>	
+	  <input type="text" name="email" id="email"><br>
+
+	  <label for="message">Message</label><br>
+	  <textarea type="text" placeholder="Describe your bug situation:"></textarea>
+
+
+	  <input type="submit" class="submit"> --> 
