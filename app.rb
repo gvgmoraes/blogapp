@@ -51,17 +51,17 @@ end
 # end 
 
 
-# get '/posts/new' do 
-# 	erb :new_post
-# end 
-
-
- get '/posts/:id' do 
-	@post = Post.find(params[:id])
-	puts @post.user.user_name
+get '/user_id/new_post' do 
 	erb :new_post
-
 end 
+
+
+#  get '/posts/:id' do 
+# 	@post = Post.find(params[:id])
+# 	puts @post.user.user_name
+# 	erb :new_post
+
+# end 
 
 
 

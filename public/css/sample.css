@@ -1,6 +1,9 @@
-.logo{
-	text-align: center;
+
+
+#logo{
+	/*margin: 0 auto;*/
 	top: 15px;
+	margin-left: 200px; 
 	width: 50%;
-	margin-right: 25%;
+
 }
