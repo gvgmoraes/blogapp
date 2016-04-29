@@ -25,7 +25,7 @@ end
 
 get '/user_home' do
 	current_user
-	@recentPosts = Post.last(6)
+	@recentPosts = Post.last(20)
 
 	@follower = Follow.where(following_id: current_user.id)
 	@following = Follow.where(follower_id: current_user.id)
@@ -71,9 +71,15 @@ get '/signout' do
 end 
 
 get '/set' do 
-	current_user
+
 	erb :setting
 end
+
+post '/set' do
+	current_user.update(username: params[:up_username], email: params[:up_email])
+	flash[:notice] = "Account information update successful."
+	redirect "/set" 
+end 
 
 get '/privacy' do 
 	current_user

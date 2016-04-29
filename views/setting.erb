@@ -1,5 +1,5 @@
 	<div class="current_user">
-		<h1><%= current_user.username %> </h1>
+		<a href="/user_home"><h1><%= current_user.username %></h1></a>
 		<nav>
 			<a href="/set">Settings</a>
 			<a href="/recent">Posts</a>
@@ -12,18 +12,20 @@
 	</div>
 
 <div class = "settings">
-<br>
-<br>
-<p> Something in Here to be able to change username </p>
-<p><%= current_user.username %> </p>
-<p><%=current_user.email %></p> 
+
+	<form method="post" action="/set">
+		    <label for='username'>User:</label>
+		    <input type='text' name='up_username' value=<%= @current_user.username %> >
+		    <label for='email'>Email:</label>
+		    <input type="text" name="up_email" value=<%= @current_user.email %> >
+		    <input type='submit' class = "button" value='Submit Changes'>
+		</form>
 
 
+	<br>
 
-<p> Something in Here to be abe to change password </p>
-<br>
-<br>
-<p> Delete Account? </p>
+
+	<p> Delete Account?     <button>Delete Account</button></p>
 </div>
 
 
