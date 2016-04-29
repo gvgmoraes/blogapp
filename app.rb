@@ -25,7 +25,7 @@ end
 
 get '/user_home' do
 	current_user
-	@recentPosts = Post.last(50)
+	@recentPosts = Post.last(6)
 
 	@follower = Follow.where(following_id: current_user.id)
 	@following = Follow.where(follower_id: current_user.id)
@@ -70,7 +70,15 @@ get '/signout' do
 	redirect "/"
 end 
 
+get '/set' do 
+	current_user
+	erb :setting
+end
 
+get '/privacy' do 
+	current_user
+	erb :privacy
+end
 
 
 

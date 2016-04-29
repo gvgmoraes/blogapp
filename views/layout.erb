@@ -10,19 +10,14 @@
 <body>
 
 		<div class="logo">
-		<!-- if session true: -->
-		<!-- <a href="/userhome"><img src="/img/logo.png"></a> -->
-		<!-- WE WANT THE USER HOME TO AUTOMATICALLY LOAD W APPROPRIATE CURRENT USER ID -->
-	<!-- 	else -->
+	
 		<% if !current_user %>
 			<a href="/"><img src="/img/logo.png"></a>
 		<% else %>
 			<a href="/user_home"><img src="/img/logo.png"></a>
 		<% end %>
 		</div>
-<br>
-<br>
-		<a href="/signout">SIGN OUT:</a>
+
 
 	<% if flash[:notice] %>
 		<div class="flash notice">
