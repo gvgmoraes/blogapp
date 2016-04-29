@@ -71,9 +71,15 @@ get '/signout' do
 end 
 
 get '/set' do 
-
 	erb :setting
 end
+
+get '/delete' do 
+	@user = current_user
+	@user.destroy
+	session.clear
+	redirect '/'
+end 
 
 post '/set' do
 	current_user.update(username: params[:up_username], email: params[:up_email])
@@ -91,6 +97,17 @@ get '/privacy' do
 	erb :privacy
 end
 
+
+get '/sign_up' do 
+	erb :signup
+end 
+
+post '/sign_up' do 
+	@user= User.create(username: params[:n_username], password: params[:n_password], email: params[:n_email])
+	session[:user_id] = @user.id
+	flash[:notice] = "Account Created!"
+	redirect '/user_home'
+end
 
 
 

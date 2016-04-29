@@ -10,18 +10,19 @@
 
 	</div>
 
-<div class = "settings">
+<div class="other">
 	<p> Thanks! </p>
 	<h2> These are all your posts: </h2>
+	<div class="eachpost">
+	
+		<% @posts.each do |t|%>
 
+			<h3> <%=t.body%></h3><p><span class="red"><%=t.likes.count%></span> </p>
+				<p>Created: <%=t.created_at%></p>
+			<% end %> 
+		</div>
+</div>
 
-<!-- CHECK IF TIME STAMP ON POST UPDATED -->
-	<% @posts.each do |t|%>
-		<h3> <%=t.body%></h3>
-		<p> <%=t.likes.count%></p>
-		<p><%=t.created_at%></p>
-	<% end %> 
-</div>>
 
 
 

@@ -24,12 +24,15 @@
 
 			<% @recentPosts.each do |t| %>
 			    <p><%= t.body %> <span class = "red"><%=t.likes.count%></span></p>
-			   <form method="POST" action="like">
-			     <input type="hidden" value= "<%= current_user.id %>" name="user_id">
-			     <input type="hidden" value="<%= t.id %>" name="post_id">
-			     <input type="submit" value="LIKE" id="like_button">
-			   </form>
-			<% end %> 
+			   <!--  <div id = "inline-block"> -->
+					   <form method="POST" action="like">
+					     <input type="hidden" value= "<%= current_user.id %>" name="user_id">
+					     <input type="hidden" value="<%= t.id %>" name="post_id">
+					     <input type="submit" value="LIKE" id="like_button">
+					   </form>
+					<% end %> 
+			<!-- 	</div> -->
+
 
 		</div>
 </div>

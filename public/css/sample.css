@@ -1,6 +1,6 @@
 
 .logo img {
-	width: 15%;
+	width: 19%;
 	display: block;
 	margin: 10px auto;
 	
@@ -22,9 +22,17 @@ body{
 .red {
 	color:  #ff3333;
 	font-weight: bold;
-	font-size: 10px;
+	font-size: 20px;
+	text-indent: 15px;
 }
 
+.eachpost{
+	background: #990000;
+	opacity: 80%;
+	height: 400px;
+	overflow: scroll;
+
+}
 
 
 h1 {
@@ -37,8 +45,8 @@ h1 {
 #post_now{
 	vertical-align: top;
 	/*padding: 15px; */
-	margin: 5px;
-	/*background:orange;*/
+	/*margin: 5px;*/
+	/*background:#990000;*/
 	/*text-align: left;*/
 	/*width: 40%;*/
 	display:block;
@@ -50,11 +58,12 @@ h1 {
 #post_history {
 	/*padding: 15px;*/ 
 	margin: 5px;
+	/*background:#990000;*/
 /*	background:blue;*/
 	height: 70vh;
 	width: 100%;
 	display:block;
-	font-size: 20px;
+	font-size: 15px;
 	line-height: 29px;
 	overflow: scroll;
 
@@ -65,10 +74,17 @@ h1 {
 	display: block;
 	margin: 12px;
 	/*padding-top: 10px;*/
-	background: #b30000;
-	
+	background: #990000;
 
 }
+.unique2 {
+	display: block;
+	margin: 12px;
+	/*padding-top: 10px;*/
+	background: #b30000;
+
+}
+
 
 .settings { 
 	display: block;
@@ -132,7 +148,7 @@ input[type=submit]:hover {
 
 a {
 	text-decoration: none;
-	color:#ff3333;
+	color:black;
 
 }
 form {
@@ -145,6 +161,13 @@ form {
 
 }
 
+.other {
+	display: block;
+	margin: 12px;
+	/*padding-top: 10px;*/
+	background: #b30000;
+	
+}
 .button {
 	display: inline-block;
 	cursor: pointer;
@@ -153,17 +176,35 @@ form {
     border-radius: 10px;
     color: #b30000;
     background: black;
+    width: 20%;
 }  
 
+.delete {
+	margin-left: 40%;
+	display: inline-block;
+	cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    color: pink;
+    background: black;
+    width: 10%;
+
+    /*justify-content: right;*/
+}  
+
+
+
 #like_botton {
-    width: 34px;
-    padding: 5px;
-    color: orange;
-    background-color: red;
+    width: 10px;
+   /* padding: 5px;*/
+ /*   color: orange;*/
+    background-color: back;
     font-weight: bold;
     cursor: pointer;
+    display: inline;
+    color:#b30000 ;
 }
-}
+
 
 .input{
 	margin: 0 auto;
@@ -171,5 +212,8 @@ form {
 }
 
 
-
+.inline-block {
+	display: inline;
+	width :10%;
+}
 
