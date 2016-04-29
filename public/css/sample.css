@@ -36,28 +36,38 @@ h1 {
 }*/
 #post_now{
 	vertical-align: top;
-	padding: 15px; 
+	/*padding: 15px; */
 	margin: 5px;
-	background:#b30000;
+	/*background:orange;*/
 	/*text-align: left;*/
-	width: 40%;
-	display:inline-block;
+	/*width: 40%;*/
+	display:block;
 	font-size: 15px;
 	line-height: 29px;
 
 }
 
 #post_history {
-	padding: 15px; 
+	/*padding: 15px;*/ 
 	margin: 5px;
-	background:#b30000;
+/*	background:blue;*/
 	height: 70vh;
-	width: 40%;
-	display:inline-block;
-	font-size: 15px;
+	width: 100%;
+	display:block;
+	font-size: 20px;
 	line-height: 29px;
 	overflow: scroll;
+
 	
+}
+
+.unique {
+	display: block;
+	margin: 12px;
+	/*padding-top: 10px;*/
+	background: #b30000;
+	
+
 }
 
 .settings { 
@@ -143,9 +153,18 @@ form {
     border-radius: 10px;
     color: #b30000;
     background: black;
-	   
+}  
 
+#like_botton {
+    width: 34px;
+    padding: 5px;
+    color: orange;
+    background-color: red;
+    font-weight: bold;
+    cursor: pointer;
 }
+}
+
 .input{
 	margin: 0 auto;
 	display:none;

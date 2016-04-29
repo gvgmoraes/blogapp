@@ -81,6 +81,11 @@ post '/set' do
 	redirect "/set" 
 end 
 
+post '/like' do 
+	@like = Like.create(user_id: params[:user_id], post_id: params[:post_id])
+    redirect back
+end
+
 get '/privacy' do 
 	current_user
 	erb :privacy

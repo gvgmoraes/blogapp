@@ -9,7 +9,7 @@
 		</nav>
 
 	</div>
-<div class = "settings">
+<div class = "unique">
 	<div id = "post_now">
 		<form method="POST" action="post/create">
 		<input type="textarea" name="[post]body" placeholder="Write your post here:"></input>
@@ -23,8 +23,13 @@
 			<h2>Check out all the Recent Posts!!</h2>
 
 			<% @recentPosts.each do |t| %>
-			<!-- add some code here so that username of post appears also -->
-				<p><%= t.body %> <span class = "red"><%=t.likes.count%></span></p>
+			    <p><%= t.body %> <span class = "red"><%=t.likes.count%></span></p>
+			   <form method="POST" action="like">
+			     <input type="hidden" value= "<%= current_user.id %>" name="user_id">
+			     <input type="hidden" value="<%= t.id %>" name="post_id">
+			     <input type="submit" value="LIKE" id="like_button">
+			   </form>
 			<% end %> 
+
 		</div>
 </div>
