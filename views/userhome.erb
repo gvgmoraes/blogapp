@@ -11,9 +11,9 @@
 	</div>
 <div class = "unique">
 	<div id = "post_now">
-		<form method="POST" action="post/create">
-		<input type="textarea" name="[post]body" placeholder="Write your post here:"></input>
-		<input type = "hidden" value= "<%= current_user.id%>" name = "[post]user_id">
+		<form method="POST" action="/post/create">
+		<input type="textarea" name="body" placeholder="Write your post here:"></input>
+		<input type = "hidden" value= "<%= current_user.id%>" name = "user_id">
 		<input type="submit"></form>
 	</div>
 
@@ -22,17 +22,26 @@
 
 			<h2>Check out all the Recent Posts!!</h2>
 
-			<% @recentPosts.each do |t| %>
-			    <p><%= t.body %> <span class = "red"><%=t.likes.count%></span></p>
-			   <!--  <div id = "inline-block"> -->
-					   <form method="POST" action="like">
-					     <input type="hidden" value= "<%= current_user.id %>" name="user_id">
-					     <input type="hidden" value="<%= t.id %>" name="post_id">
-					     <input type="submit" value="LIKE" id="like_button">
-					   </form>
+			<% @posts.each do |t| %>
+			    <h3></h3> 
+			    <p>
+			    	<%= t.body %> 
+			    	<span class = "red">
+			    		 <%if t.likes.count <= 0%>
+			    		 	<form method="POST" action="like">
+					     	<input type="hidden" value= "<%= current_user.id %>" name="user_id">
+					     	<input type="hidden" value="<%= t.id %>" name="post_id">
+					     	<input type="submit" value="LIKE" id="like_button">
+					  		</form>
+					  	<%else%>
+					  		<form method="POST" action="unlike">
+         					 <input type="hidden" value= "<%= current_user.id %>" name="user_id">
+          					<input type="hidden" value="<%= t.id %>" name="post_id">
+        				  	<input type="submit" value="UNLIKE" id="like_button">
+       						 </form>
+       					<% end %>
 					<% end %> 
-			<!-- 	</div> -->
-
-
+			    	</span>
+			    	
 		</div>
-</div>
+

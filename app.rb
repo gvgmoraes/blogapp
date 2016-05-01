@@ -24,8 +24,9 @@ end
 
 
 get '/user_home' do
-	current_user
-	@recentPosts = Post.last(20)
+	@user = current_user
+	@posts = Post.last(20)
+
 
 	@follower = Follow.where(following_id: current_user.id)
 	@following = Follow.where(follower_id: current_user.id)
@@ -53,13 +54,14 @@ end
 
 
 post '/post/create' do
-	post = Post.create(params[:post])
+	@user = current_user
+	@post = Post.create(body: params[:body], user_id: params[:user_id])
 	# redirect "/posts/#{post.id}"
 	redirect "/recent" 
 end 
 
 # if you want the last 10 posts then @posts = current_user.posts.last(10)
- get '/recent' do 
+get '/recent' do 
  	@posts = current_user.posts
 	erb :new_post 
 
@@ -87,9 +89,22 @@ post '/set' do
 	redirect "/set" 
 end 
 
+# post '/like' do 
+# 	@like = Like.create(user_id: params[:user_id], post_id: params[:post_id])
+#     redirect back
+# end
+
 post '/like' do 
-	@like = Like.create(user_id: params[:user_id], post_id: params[:post_id])
-    redirect back
+    @like = Like.create(user_id: params[:user_id], post_id: params[:post_id])
+    puts "XXXXXXXXX #{@un_l}XXXXXXXXX"
+   redirect '/user_home'
+end
+
+post '/unlike' do 
+    @un_like = Like.where(user_id: params[:user_id], post_id: params[:post_id]).first
+    puts "XXXXXXXXX #{@un_l}XXXXXXXXX"
+    @un_like.destroy
+   redirect '/user_home'
 end
 
 get '/privacy' do 
