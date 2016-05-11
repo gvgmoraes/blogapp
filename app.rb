@@ -124,5 +124,11 @@ post '/sign_up' do
 	redirect '/user_home'
 end
 
+delete '/post' do
+	@post = Post.get(body: params[:body], user_id: params[:user_id])
+	@post.destroy 
+	redirect '/user_home'
+end
+
 
 

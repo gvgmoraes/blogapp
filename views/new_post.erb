@@ -17,8 +17,12 @@
 	
 		<% @posts.each do |t|%>
 
-			<h3> <%=t.body%></h3><p><span class="red"><%=t.likes.count%></span> </p>
-				<p>Created: <%=t.created_at%></p>
+			<h3> <%=t.body%></h3>
+			<button method="destroy" action= "/post/delete" >Delete Post</button>
+			<button type="button">Edit Post</button>
+			<p><span class="red"><%=t.likes.count%></span> </p>
+			<p>Created: <%=t.created_at%></p>
+
 			<% end %> 
 		</div>
 </div>
