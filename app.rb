@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'bundler/setup'
 require 'rack-flash'
+# require 'pry'
 enable :sessions
 use Rack::Flash, :sweep => true
 # require 'sinatra/sinatra-reloader'
@@ -102,7 +103,7 @@ end
 
 post '/unlike' do 
     @un_like = Like.where(user_id: params[:user_id], post_id: params[:post_id]).first
-    puts "XXXXXXXXX #{@un_l}XXXXXXXXX"
+    # puts "XXXXXXXXX #{@un_l}XXXXXXXXX"
     @un_like.destroy
    redirect '/user_home'
 end
@@ -124,9 +125,16 @@ post '/sign_up' do
 	redirect '/user_home'
 end
 
-delete '/post' do
-	@post = Post.get(body: params[:body], user_id: params[:user_id])
-	@post.destroy 
+post '/delete_post' do
+	# binding.pry
+	puts params["id"]
+	Post.find_by(id: params[:id]).destroy 
+	redirect '/user_home'
+end
+
+post '/edit_post' do
+	post = Post.find_by(id: params[:id])
+	post.update(body: params[:body])
 	redirect '/user_home'
 end
 

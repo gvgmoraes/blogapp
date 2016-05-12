@@ -18,8 +18,18 @@
 		<% @posts.each do |t|%>
 
 			<h3> <%=t.body%></h3>
-			<button method="destroy" action= "/post/delete" >Delete Post</button>
-			<button type="button">Edit Post</button>
+			<form method="POST" action="/delete_post">
+				<input type="hidden" name="id" value=<%= t.id%>></input>
+				<input type="submit" value="Delete Post"></input>
+			</form>
+
+			<form method="POST" action="/edit_post">
+				<input type="hidden" name="id" value=<%= t.id%>></input>
+				<input type="textarea" placeholder="Edit Post"></input>
+				<input type="submit"></input>
+			</form>
+
+			<!-- <button type="button">Edit Post</button> -->
 			<p><span class="red"><%=t.likes.count%></span> </p>
 			<p>Created: <%=t.created_at%></p>
 

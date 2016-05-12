@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 # ruby '2.2.1'
 # ruby '2.3.0'
 
+gem 'pry'
+
 gem 'sinatra-activerecord'
 # the adapter between Sinatra and
 # the ActiveRecord library
