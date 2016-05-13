@@ -129,13 +129,15 @@ post '/delete_post' do
 	# binding.pry
 	puts params["id"]
 	Post.find_by(id: params[:id]).destroy 
-	redirect '/user_home'
+	redirect '/recent'
 end
 
 post '/edit_post' do
-	post = Post.find_by(id: params[:id])
+	puts params.inspect
+	post = Post.find(params[:id])
+	puts "XXXXXXX #{post.id}" 
 	post.update(body: params[:body])
-	redirect '/user_home'
+	redirect '/recent'
 end
 
 

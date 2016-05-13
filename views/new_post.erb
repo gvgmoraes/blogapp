@@ -11,7 +11,7 @@
 	</div>
 
 <div class="other">
-	<p> Thanks! </p>
+	<p> Thanks!</p>
 	<h2> These are all your posts: </h2>
 	<div class="eachpost">
 	
@@ -24,9 +24,9 @@
 			</form>
 
 			<form method="POST" action="/edit_post">
-				<input type="hidden" name="id" value=<%= t.id%>></input>
-				<input type="textarea" placeholder="Edit Post"></input>
-				<input type="submit"></input>
+				<input type="hidden" name="id" value=<%= t.id %>></input>
+				<input type="textarea" name="body" placeholder="Edit Post"></input>
+				<input type="submit" value="Edit"></input>
 			</form>
 
 			<!-- <button type="button">Edit Post</button> -->
